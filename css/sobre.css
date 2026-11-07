@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000000;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+header ul{
+    display: flex;
+    gap: 47px;
+    list-style: none;
+    background: rgba(255,255,255,0.1);
+    padding: 17px 20px;
+    border-radius: 70px;
+    backdrop-filter: blur(10px);
+}
+
+header ul a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    transition: 0.3s;
+}
+
+header ul a:hover{
+    color: white;
+}
+
+.logotipo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main.sobreConteudo {
+    width: 100%;
+    max-width: 900px;
+    margin: 140px auto 40px;
+    padding: 0 25px;
+    flex: 1;
+}
+
+.introducaoSobre {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.04);
+}
+
+.tagSobre {
+    text-align: center;
+    color: #ff4d4d;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.introducaoSobre h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #ffffff;
+}
+
+.introducaoSobre p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+footer a{
+    color: #ff0101;
+    text-decoration: none;
+}

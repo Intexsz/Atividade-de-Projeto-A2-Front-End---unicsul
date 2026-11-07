@@ -1,0 +1,98 @@
+/* Esta é a área onde o jogo acontece. */
+.jogo {
+    width: 600px;
+    height: 200px;
+    border: 1px solid black; /* Desenha a borda ao redor do jogo. */
+    margin: auto; /* Centraliza a área na página. */
+    position: relative; /* Serve de referência para posicionar os personagens. */
+    overflow: hidden; /* Esconde o cacto quando ele sai da área do jogo. */
+}
+
+/* Define o tamanho, a imagem e a posição do dinossauro. */
+#dinossauro {
+    width: 50px;
+    height: 50px;
+    background-image: url(img/Dino.png);
+    background-size: 50px 50px;
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+
+}
+
+/* pontuação no canto superior direito. */
+#pontuacao {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*  instruções  da área do jogo centralizadas. */
+.mensagem-jogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2; /* Mantém a mensagem na frente dos outros elementos. */
+    transform: translate(-50%, -50%); /* Centraliza a mensagem pelo próprio tamanho. */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    white-space: pre-line;
+}
+
+/* animação de pulo . */
+.pulo {
+    animation: pulo 0.8s linear;
+
+}
+
+
+/* caminho do dinossauro durante o pulo. */
+@keyframes pulo {
+    0% {
+        transform: translateY(0);
+    }
+
+    /* salto do dinossalro (quando ele ta no alto) */
+    35%, 65% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* movimento do cacto. */
+#cacto {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    background-image: url(img/cactus.png);
+    background-size: 20px 40px;
+
+    /* A animação fica parada até o jogo começar. */
+    animation:movimento-cacto 2.5s infinite linear;
+    animation-play-state: paused;
+}
+
+/* Move o cacto da direita para a esquerda */
+@keyframes movimento-cacto {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+       left: -20px;
+    }
+
+}
