@@ -1,6 +1,6 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -20,11 +20,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 4%;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(8px);
 }
 
 .logotipo {
@@ -36,11 +35,12 @@ header {
 
 header ul {
     display: flex;
-    gap: 20px;
+    gap: 47px;
     list-style: none;
-    background: rgba(255,255,255,0.08);
-    padding: 12px 20px;
-    border-radius: 50px;
+    background: rgba(255,255,255,0.1);
+    padding: 17px 20px;
+    border-radius: 70px;
+    backdrop-filter: blur(10px);
 }
 
 header ul a {
