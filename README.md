@@ -30,6 +30,9 @@ https://www.youtube.com/watch?v=pXAGoP2G2vE&t=1527s
 
 # LINKS (CREDITOS): 
 
+FONTE TEXTO
 https://fonts.google.com/specimen/Poppins
-ICONES: https://fontawesome.com/
+
+ICONES
+https://fontawesome.com/
 
