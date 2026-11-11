@@ -96,7 +96,7 @@ header ul a:hover{
 .secao1{
     min-height: 100vh;
 
-    background-image: url("imagens/fundo1.jpg");
+    background-image: url("../img/wallpaper_inicial2.jpg");
     border-radius: 1%;
     background-size: cover;
     background-position: center;
