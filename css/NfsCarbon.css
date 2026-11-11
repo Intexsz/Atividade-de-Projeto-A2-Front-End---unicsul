@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 4%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.logotipo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header ul {
+    display: flex;
+    gap: 24px;
+    padding: 14px 20px;
+    border-radius: 30px;
+    background: #1c1c1c;
+    list-style: none;
+}
+
+header a,
+footer a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+header a:hover,
+footer a:hover {
+    color: #ff3030;
+}
+
+.page-jogo {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 60px;
+}
+
+.jogo-layout {
+    display: grid;
+    width: 100%;
+    max-width: 1050px;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    align-items: center;
+    gap: 36px;
+}
+
+.capa-box {
+    overflow: hidden;
+    justify-self: center;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid #444;
+    border-radius: 16px;
+    box-shadow: 0 16px 36px #000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.capa-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 42px #000;
+}
+
+.capa-box img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.info-box {
+    display: grid;
+    gap: 18px;
+    padding: clamp(24px, 4vw, 40px);
+    border: 1px solid #333;
+    border-radius: 18px;
+    background: #151515;
+}
+
+.tag {
+    color: #ff3030;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.info-box h1 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+}
+
+.resumo {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.jogar {
+    display: inline-block;
+    justify-self: start;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #e60000;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.jogar:hover {
+    transform: translateY(-2px);
+    background: #bd0000;
+}
+
+footer {
+    padding: 20px;
+    background: #111;
+    color: #ddd;
+    text-align: center;
+}
+
+footer a {
+    color: #ff3030;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .page-jogo {
+        padding-top: 175px;
+    }
+
+    .jogo-layout {
+        max-width: 440px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .capa-box {
+        width: min(100%, 280px);
+        margin: 0 auto;
+    }
+
+    .capa-box img {
+        height: 380px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .capa-box,
+    .jogar {
+        transition: none;
+    }
+}
