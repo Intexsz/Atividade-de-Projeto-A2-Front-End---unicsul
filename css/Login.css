@@ -27,6 +27,7 @@ body {
 .container {
     width: 425px;
     background-color: transparent;
+    backdrop-filter: blur(0.9px);
     border : 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     color: #fff;
@@ -45,7 +46,7 @@ body {
     position:relative;
     width: 100%;
     height: 50px;
-    margin: 30px 0;
+    margin: 20px 0 15px 0;
 
 }
 
@@ -60,15 +61,9 @@ body {
     color: #ff0000;
     padding: 20px 45px 20px 20px;
     border-radius: 45px ;
-    
-
-
-
 }
 
-
 #titulo{
-
 color: #ff0202;
 font-size: 42px;
     
@@ -84,7 +79,7 @@ font-size: 42px;
     position: absolute;
     right: 25px;
     top: 50%;
-    transform: translateY(-50%); /* centraliza icones */ 
+    transform: translateY(-50%);  
     font-size: 20px;
     color: #ff0000;
    
@@ -92,40 +87,32 @@ font-size: 42px;
 }
 
 
-.remember-forgot{
-
+.remember-forgot {
     display: flex;
     justify-content: space-between;
-
-
+    align-items: center; 
+    margin-bottom: 20px;
 }
 
+.remember-forgot label {
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+    color: #fff;
+}
 
 .remember-forgot label input {
-
-    accent-color: rgb(255, 0, 0); /* cor de fundo do chackbox*/
+    accent-color: rgb(255, 0, 0); 
     margin-right: 5px;
-
-
 }
 
-.remember-forgot a{
-
+.remember-forgot a {
     text-decoration: none;
     color: #fff;
-    margin: -16px 0 15px ;
-
-
-
 }
 
-
-.remember-forgot a:hover{
-
-   text-decoration: underline; 
-    
-
-
+.remember-forgot a:hover {
+    text-decoration: underline; 
 }
 
 .entrar{
@@ -139,14 +126,17 @@ font-size: 42px;
     color: rgb(0, 0, 0);
     font-weight: 600;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: 2px solid #e70707;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
 
 }
 
 .entrar:hover{
 
-    background-color: transparent ;
-    border: 2px solid rgba(255,255, 255, .1);
-    color: #fff;
+    backdrop-filter: blur(0.9px);
+    border: 2px solid #473434;
+    color: #ffffff;
     transition: 0.6s;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }

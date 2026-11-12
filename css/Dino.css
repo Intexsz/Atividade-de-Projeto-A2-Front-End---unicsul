@@ -1,57 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #0b0b0e; /* Fundo geral bem escuro */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Esta é a área onde o jogo acontece. */
 .jogo {
     width: 600px;
     height: 200px;
-    border: 1px solid black; /* Desenha a borda ao redor do jogo. */
+    background-color: #121212; /* Fundo escuro moderno */
+    border: 3px solid #333; /* Borda mais grossa e discreta */
+    border-radius: 8px; /* Cantos levemente arredondados */
     margin: auto; /* Centraliza a área na página. */
     position: relative; /* Serve de referência para posicionar os personagens. */
     overflow: hidden; /* Esconde o cacto quando ele sai da área do jogo. */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* Define o tamanho, a imagem e a posição do dinossauro. */
 #dinossauro {
     width: 50px;
     height: 50px;
-    background-image: url(../img/Dino.png);
+    background-image: url(../img/Dino\ \(2\).png);
     background-size: 50px 50px;
     position: absolute;
     left: 30px;
     bottom: 0;
-
+    filter: invert(1); /* Deixa o dinossauro branco no fundo escuro */
+    image-rendering: pixelated; /* Mantém os pixels nítidos */
 }
 
 /* pontuação no canto superior direito. */
 #pontuacao {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 15px;
+    right: 20px;
     z-index: 1;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: 'Press Start 2P', monospace; /* Fonte estilo arcade */
+    font-size: 11px;
+    color: #00ffcc; /* Tom neon verde/ciano */
 }
 
-/*  instruções  da área do jogo centralizadas. */
+/* instruções da área do jogo centralizadas. */
 .mensagem-jogo {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 2; /* Mantém a mensagem na frente dos outros elementos. */
     transform: translate(-50%, -50%); /* Centraliza a mensagem pelo próprio tamanho. */
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    line-height: 1.8;
     text-align: center;
+    border: 2px solid #00ffcc;
+    border-radius: 6px;
     white-space: pre-line;
 }
 
-/* animação de pulo . */
+/* animação de pulo. */
 .pulo {
     animation: pulo 0.8s linear;
-
 }
-
 
 /* caminho do dinossauro durante o pulo. */
 @keyframes pulo {
@@ -59,7 +76,7 @@
         transform: translateY(0);
     }
 
-    /* salto do dinossalro (quando ele ta no alto) */
+    /* salto do dinossauro (quando ele tá no alto) */
     35%, 65% {
         transform: translateY(-100px);
     }
@@ -67,7 +84,6 @@
     100% {
         transform: translateY(0);
     }
-
 }
 
 /* movimento do cacto. */
@@ -77,11 +93,13 @@
     position: absolute;
     bottom: 0;
     left: 100%;
-    background-image: url(../img/cactus.png);
+    background-image: url(../img/cactus\ \(2\).png);
     background-size: 20px 40px;
+    filter: invert(1); /* Deixa o cacto branco no fundo escuro */
+    image-rendering: pixelated;
 
     /* A animação fica parada até o jogo começar. */
-    animation:movimento-cacto 2.5s infinite linear;
+    animation: movimento-cacto 2.5s infinite linear;
     animation-play-state: paused;
 }
 
@@ -92,7 +110,6 @@
     }
 
     100% {
-       left: -20px;
+        left: -20px;
     }
-
 }
