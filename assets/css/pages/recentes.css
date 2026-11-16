@@ -1,0 +1,139 @@
+/* Recentes — linha do tempo por períodos (Etapa 3).
+   A barra de filtros, as abas e as pílulas de resumo são componentes compartilhados (components.css).
+   Sem rem: tudo em px/%/fr/clamp. */
+
+.recent-summary {
+    margin-top: 8px;
+}
+
+.recent-tabs {
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+
+.tabs__count {
+    margin-left: 4px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.recent-toolbar {
+    margin-bottom: 32px;
+}
+
+/* ---------- Linha do tempo ---------- */
+.timeline {
+    --gutter-tl: 36px;
+    position: relative;
+    display: grid;
+    gap: 48px;
+    margin: 0;
+    padding: 0 0 0 var(--gutter-tl);
+    list-style: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent), rgba(166, 3, 17, 0.55) 70%, rgba(166, 3, 17, 0));
+}
+
+.timeline__period {
+    position: relative;
+    min-width: 0;
+}
+
+.timeline__head {
+    display: grid;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.timeline__dot {
+    position: absolute;
+    left: calc(var(--gutter-tl) * -1);
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(242, 5, 25, 0.14), 0 0 16px rgba(242, 5, 25, 0.7);
+}
+
+.timeline__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.timeline__title::first-letter {
+    color: var(--accent);
+}
+
+.timeline__meta {
+    font-size: 14px;
+    color: var(--text-2);
+}
+
+@media (max-width: 640px) {
+    .timeline {
+        --gutter-tl: 30px;
+        gap: 40px;
+    }
+
+    .timeline__title {
+        font-size: 20px;
+    }
+}
+
+/* Aviso quando as datas caem em um único período (sem linha do tempo de enfeite) */
+.timeline-flat {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    border-radius: var(--r-md);
+    background: rgba(242, 5, 25, 0.08);
+    border: 1px solid rgba(242, 5, 25, 0.25);
+    font-size: 14px;
+    color: var(--text-2);
+}
+
+.timeline-flat .icon {
+    flex: none;
+    margin-top: 2px;
+    color: var(--accent);
+}
+
+.timeline-flat strong {
+    color: #fff;
+}
+
+.recent-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--text-3);
+}
+
+.recent-note .icon {
+    flex: none;
+    color: var(--accent);
+}
+
+.recent-foot {
+    margin-top: 24px;
+}

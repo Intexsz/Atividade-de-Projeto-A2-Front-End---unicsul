@@ -1,0 +1,455 @@
+body[data-page='dino'] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+body[data-page='dino'] .site-header {
+    flex: 0 0 auto;
+}
+
+/*
+ * "#main.dino-main" precisa do ID: a regra global "#main { display: block; min-height: 60vh }" (base.css)
+ * vencia ".dino-main" e fazia a área do jogo colapsar. Aqui o jogo ocupa 60% da altura da janela e
+ * já aparece inteiro ao abrir a página, sem depender do botão Fullscreen.
+ */
+#main.dino-main {
+    display: flex;
+    flex: 1 1 0%;
+    min-height: 60vh;
+    min-height: 60svh;
+    overflow: hidden;
+}
+
+.dino-stage {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex: 1 1 0%;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(166, 3, 17, 0.12), transparent 64%),
+        #101010;
+}
+
+.dino-stage::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: '';
+    background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: 100% 48px;
+    pointer-events: none;
+}
+
+.dino-game-shell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    background: linear-gradient(180deg, rgba(21, 18, 18, 0.72), rgba(13, 13, 13, 0.94));
+}
+
+.dino-toolbar {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 28px);
+    min-height: 58px;
+    padding: 7px clamp(14px, 4vw, 60px);
+    border-bottom: 1px solid rgba(166, 3, 17, 0.44);
+    background: rgba(13, 13, 13, 0.84);
+}
+
+.dino-heading {
+    min-width: 0;
+}
+
+.dino-eyebrow {
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.dino-heading h1 {
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2vw, 21px);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.dino-controls-hint {
+    margin-left: auto;
+    color: #9a8585;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.dino-controls-hint span {
+    padding: 0 4px;
+    color: var(--accent-strong);
+}
+
+.dino-hud {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(10px, 2vw, 24px);
+    margin-left: auto;
+    color: #9a8585;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.dino-hud strong {
+    display: inline-block;
+    min-width: 48px;
+    margin-left: 5px;
+    color: #ffd49d;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+}
+
+.dino-fullscreen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 0 12px;
+    border: 1px solid rgba(242, 116, 5, 0.58);
+    border-radius: 7px;
+    background: rgba(242, 116, 5, 0.12);
+    color: #ff9b35;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dino-fullscreen__icon {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.dino-fullscreen:hover {
+    background: rgba(242, 116, 5, 0.25);
+    box-shadow: 0 0 16px rgba(242, 116, 5, 0.18);
+}
+
+.dino-fullscreen:focus-visible,
+.dino-jump:focus-visible {
+    outline: 3px solid #ffd49d;
+    outline-offset: 3px;
+}
+
+.dino-arena {
+    position: relative;
+    flex: 1 1 0%;
+    min-height: 0;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+/* O canvas ocupa a arena sem influenciar a altura dela (antes ele mantinha proporção 2:1 e crescia além da tela). */
+#dino-canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    touch-action: manipulation;
+}
+
+#dino-canvas:focus-visible {
+    outline: none;
+}
+
+.dino-score {
+    position: absolute;
+    top: clamp(10px, 2vh, 22px);
+    left: 50%;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: 1px;
+    transform: translateX(-50%);
+    color: var(--accent);
+    font-family: var(--font-display);
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 0 16px rgba(242, 116, 5, 0.24);
+}
+
+.dino-score__label {
+    color: #b98564;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.dino-score strong {
+    color: #ffb451;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.dino-touch-controls {
+    display: none;
+    position: absolute;
+    right: clamp(12px, 3vw, 34px);
+    bottom: clamp(12px, 3vh, 26px);
+    z-index: 2;
+}
+
+.dino-jump {
+    display: grid;
+    place-items: center;
+    gap: 0;
+    width: 76px;
+    height: 76px;
+    border: 2px solid #ff9b35;
+    border-radius: 50%;
+    background: rgba(242, 116, 5, 0.92);
+    color: #171111;
+    box-shadow: 0 0 0 7px rgba(242, 116, 5, 0.12), 0 8px 28px rgba(0, 0, 0, 0.48);
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1;
+    touch-action: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dino-jump span:first-child {
+    font-size: 26px;
+    line-height: 0.8;
+}
+
+.dino-jump:active {
+    background: #ff9b35;
+    transform: scale(0.96);
+}
+
+/* Só o intervalo entre jogo e rodapé é removido; o conteúdo do rodapé usa o CSS global. */
+body[data-page='dino'] .site-footer {
+    flex: 0 0 auto;
+    margin-top: 0;
+}
+
+.dino-game-shell:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    max-height: none;
+    background: #0d0d0d;
+}
+
+.dino-game-shell.is-fullscreen-fallback {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0d0d0d;
+}
+
+.dino-game-shell:fullscreen .dino-toolbar,
+.dino-game-shell.is-fullscreen-fallback .dino-toolbar {
+    position: absolute;
+    z-index: 3;
+    inset: 0 0 auto;
+    min-height: 0;
+    padding: 12px;
+    border: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+.dino-game-shell:fullscreen .dino-heading,
+.dino-game-shell:fullscreen .dino-hud,
+.dino-game-shell:fullscreen .dino-controls-hint,
+.dino-game-shell.is-fullscreen-fallback .dino-heading,
+.dino-game-shell.is-fullscreen-fallback .dino-hud,
+.dino-game-shell.is-fullscreen-fallback .dino-controls-hint {
+    display: none;
+}
+
+.dino-game-shell:fullscreen .dino-fullscreen,
+.dino-game-shell.is-fullscreen-fallback .dino-fullscreen {
+    margin-left: auto;
+    pointer-events: auto;
+}
+
+.dino-game-shell:fullscreen .dino-arena,
+.dino-game-shell.is-fullscreen-fallback .dino-arena {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+}
+
+body.dino-fullscreen-fallback {
+    overflow: hidden;
+}
+
+@media (pointer: coarse), (max-width: 760px) {
+    .dino-touch-controls {
+        display: block;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .dino-toolbar {
+        min-height: 53px;
+        gap: 9px;
+        padding: 5px 12px;
+    }
+
+    .dino-eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .dino-heading h1 {
+        font-size: 16px;
+    }
+
+    .dino-hud {
+        gap: 7px;
+        font-size: 8px;
+        letter-spacing: 0.3px;
+    }
+
+    .dino-hud strong {
+        min-width: 35px;
+        margin-left: 2px;
+        font-size: 11px;
+    }
+
+    .dino-fullscreen {
+        min-height: 34px;
+        gap: 3px;
+        padding: 0 7px;
+        font-size: 9px;
+    }
+
+    .dino-fullscreen__icon {
+        font-size: 16px;
+    }
+
+    .dino-controls-hint {
+        display: none;
+    }
+
+    .dino-jump {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dino-toolbar {
+        gap: 7px;
+        padding-inline: 9px;
+    }
+
+    .dino-hud {
+        align-items: flex-end;
+        gap: 0;
+        line-height: 1.2;
+    }
+
+    .dino-hud strong {
+        min-width: 32px;
+    }
+
+    .dino-fullscreen {
+        gap: 3px;
+        padding: 0 6px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .dino-fullscreen__icon {
+        font-size: 17px;
+    }
+}
+
+@media (max-height: 520px) {
+    .dino-toolbar {
+        min-height: 46px;
+    }
+
+    .dino-jump {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-height: 760px) {
+    body[data-page='dino'] .footer__inner {
+        padding-block: 16px 10px;
+    }
+
+    body[data-page='dino'] .footer__col--brand .brand__logo {
+        width: min(260px, 100%);
+        max-height: 92px;
+    }
+
+    body[data-page='dino'] .footer__grid {
+        gap: 16px;
+        padding-bottom: 12px;
+    }
+
+    body[data-page='dino'] .footer__col {
+        gap: 7px;
+    }
+
+    body[data-page='dino'] .footer__links {
+        gap: 2px;
+    }
+
+    body[data-page='dino'] .footer__links a,
+    body[data-page='dino'] .footer__links .link-btn {
+        min-height: 19px;
+    }
+
+    body[data-page='dino'] .footer__legal {
+        gap: 4px;
+        padding-top: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dino-fullscreen {
+        transition: none;
+    }
+}

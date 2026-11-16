@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recentes — Projeto Fênix</title>
+    <meta name="description" content="Novidades do catálogo Projeto Fênix: jogos adicionados e atualizados recentemente.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/recentes.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/recentes.js"></script>
+</head>
+
+<body data-page="recentes">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" tabindex="-1">
+        <noscript>
+            <p class="noscript">O Projeto Fênix precisa de JavaScript para montar o catálogo. Ative o JavaScript no navegador e recarregue a página.</p>
+        </noscript>
+
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container-wide page-hero__inner">
+                <nav aria-label="Trilha de navegação">
+                    <ol class="crumbs">
+                        <li><a href="index.html">Início</a></li>
+                        <li aria-current="page">Recentes</li>
+                    </ol>
+                </nav>
+                <h1 class="page-hero__title" id="page-title">Recentes</h1>
+                <p class="page-hero__desc">As novidades do catálogo em ordem cronológica, calculadas a partir das datas reais de inclusão e de atualização de cada jogo.</p>
+                <div data-slot="summary"></div>
+            </div>
+        </section>
+
+        <section class="section section--tight" aria-labelledby="recent-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <h2 class="title-hud" id="recent-title" tabindex="-1">Linha do tempo</h2>
+                        <p class="section-head__desc" data-slot="basis"></p>
+                    </div>
+                </header>
+
+                <div class="tabs recent-tabs" role="tablist" aria-label="Tipo de novidade" data-slot="view-tabs">
+                    <button class="tabs__tab" type="button" role="tab" id="tab-added" aria-controls="recent-panel" aria-selected="true" data-tab="added">Adicionados <span class="tabs__count" data-count="added"></span></button>
+                    <button class="tabs__tab" type="button" role="tab" id="tab-updated" aria-controls="recent-panel" aria-selected="false" tabindex="-1" data-tab="updated">Atualizados <span class="tabs__count" data-count="updated"></span></button>
+                </div>
+
+                <div class="recent-toolbar" data-slot="toolbar"></div>
+
+                <div class="recent-panel" id="recent-panel" role="tabpanel" aria-labelledby="tab-added" data-slot="timeline"></div>
+
+                <p class="recent-note"><span data-icon="info" data-size="16" aria-hidden="true"></span><span>As datas são as do cadastro do jogo no Projeto Fênix — não a data de lançamento do jogo original.</span></p>
+                <p class="recent-foot"><a class="btn btn--secondary" href="todos-os-jogos.html">Ver todos os jogos</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

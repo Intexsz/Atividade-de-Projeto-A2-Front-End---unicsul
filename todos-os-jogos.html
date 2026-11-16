@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todos os jogos — Projeto Fênix</title>
+    <meta name="description" content="Catálogo completo do Projeto Fênix: pesquise e filtre jogos para navegador por gênero, plataforma, tipo de projeto e controles aceitos.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/catalogo.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/catalogo.js"></script>
+</head>
+
+<body data-page="catalogo">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" tabindex="-1">
+        <noscript>
+            <p class="noscript">O Projeto Fênix precisa de JavaScript para montar o catálogo. Ative o JavaScript no navegador e recarregue a página.</p>
+        </noscript>
+
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container-wide page-hero__inner">
+                <nav aria-label="Trilha de navegação">
+                    <ol class="crumbs">
+                        <li><a href="index.html">Início</a></li>
+                        <li aria-current="page">Todos os jogos</li>
+                    </ol>
+                </nav>
+                <h1 class="page-hero__title" id="page-title">Todos os jogos</h1>
+                <p class="page-hero__desc">O catálogo completo de jogos que rodam no navegador. Pesquise por nome, gênero, plataforma ou controles aceitos e combine quantos filtros quiser.</p>
+                <ul class="stat-pills" data-slot="stats" aria-label="Números do catálogo"></ul>
+            </div>
+        </section>
+
+        <section class="section catalog-section" aria-label="Catálogo de jogos">
+            <div class="container-wide">
+                <div class="catalog-layout" data-slot="layout">
+                    <aside class="filters-panel" id="filters-panel" aria-labelledby="filters-title" data-slot="panel"></aside>
+                    <div class="filters-backdrop" data-slot="backdrop" hidden></div>
+
+                    <div class="catalog-main">
+                        <div class="catalog-toolbar" data-slot="toolbar"></div>
+                        <ul class="active-tags" data-slot="tags" aria-label="Filtros ativos" hidden></ul>
+                        <nav class="az-nav" data-slot="az" aria-label="Navegação alfabética"></nav>
+
+                        <div class="catalog-results">
+                            <header class="catalog-results__head">
+                                <h2 class="catalog-results__title" id="results-title" tabindex="-1">Resultados</h2>
+                                <p class="result-count" data-slot="summary" role="status" aria-live="polite"></p>
+                                <p class="local-note" data-slot="local-note" hidden><span data-icon="info" data-size="14"></span>Popularidade e acessos são contados somente neste dispositivo; não são estatísticas globais.</p>
+                            </header>
+                            <div data-slot="results" aria-labelledby="results-title" aria-busy="true"></div>
+                        </div>
+                        <div data-slot="pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

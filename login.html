@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entrar — Projeto Fênix</title>
+    <meta name="description" content="Entre na sua conta do Projeto Fênix para salvar seus jogos favoritos.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/auth.js"></script>
+</head>
+<body data-page="login">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" class="auth-main" tabindex="-1">
+        <section class="auth-stage" aria-labelledby="auth-title">
+            <div class="auth-card" data-auth-card>
+                <a class="auth-back" href="index.html"><span aria-hidden="true">←</span> Voltar ao catálogo</a>
+                <div class="auth-content" data-auth-content>
+                    <p class="auth-eyebrow">BEM-VINDO DE VOLTA</p>
+                    <h1 class="auth-title" id="auth-title">Entre na sua conta</h1>
+                    <p class="auth-description">Acesse seus favoritos e continue de onde parou.</p>
+                    <p class="auth-status" data-auth-status role="status" aria-live="polite" hidden></p>
+
+                    <form class="auth-form" data-auth-form data-mode="login">
+                        <label class="auth-field">
+                            <span>E-mail</span>
+                            <input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                        </label>
+                        <label class="auth-field">
+                            <span>Senha</span>
+                            <input name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+                        </label>
+                        <button class="auth-submit" type="submit">Entrar <span aria-hidden="true">→</span></button>
+                    </form>
+
+                    <div class="auth-divider"><span>ou continue com</span></div>
+                    <div class="auth-social" data-social-buttons>
+                        <button class="auth-social__button" type="button" data-social="google"><img src="assets/icons/google.svg" alt="" width="20" height="20">Google</button>
+                        <button class="auth-social__button" type="button" data-social="facebook"><img src="assets/icons/facebook.svg" alt="" width="20" height="20">Facebook</button>
+                        <button class="auth-social__button" type="button" data-social="x"><img src="assets/icons/x-social.svg" alt="" width="20" height="20">X</button>
+                    </div>
+                    <p class="auth-note">No modo Live Server, contas de demonstração ficam apenas neste navegador. O acesso social precisa ser configurado com cada provedor antes de entrar em produção.</p>
+                    <p class="auth-switch">Ainda não tem uma conta? <a data-register-link href="registro.html">Criar conta</a></p>
+                </div>
+
+                <div class="auth-account" data-account-panel hidden>
+                    <p class="auth-eyebrow">SESSÃO ATIVA</p>
+                    <h1 class="auth-title">Olá, <span data-account-name>jogador</span></h1>
+                    <p class="auth-description" data-account-email></p>
+                    <a class="auth-submit auth-submit--link" href="index.html">Voltar ao catálogo <span aria-hidden="true">→</span></a>
+                    <button class="auth-logout" type="button" data-logout>Sair da conta</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

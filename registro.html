@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro — Projeto Fênix</title>
+    <meta name="description" content="Crie sua conta do Projeto Fênix para salvar seus jogos favoritos.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/auth.js"></script>
+</head>
+<body data-page="registro">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" class="auth-main" tabindex="-1">
+        <section class="auth-stage auth-stage--register" aria-labelledby="auth-title">
+            <div class="auth-card auth-card--register" data-auth-card>
+                <a class="auth-back" href="index.html"><span aria-hidden="true">←</span> Voltar ao catálogo</a>
+                <div class="auth-content" data-auth-content>
+                    <p class="auth-eyebrow">FAÇA PARTE DA COMUNIDADE</p>
+                    <h1 class="auth-title" id="auth-title">Crie sua conta</h1>
+                    <p class="auth-description">Salve seus jogos e monte sua biblioteca pessoal.</p>
+                    <p class="auth-status" data-auth-status role="status" aria-live="polite" hidden></p>
+
+                    <form class="auth-form" data-auth-form data-mode="register">
+                        <label class="auth-field">
+                            <span>Nome</span>
+                            <input name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Como podemos chamar você?" required>
+                        </label>
+                        <label class="auth-field">
+                            <span>E-mail</span>
+                            <input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                        </label>
+                        <label class="auth-field">
+                            <span>Senha <small>(mínimo de 8 caracteres)</small></span>
+                            <input name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Crie uma senha" required>
+                        </label>
+                        <label class="auth-field">
+                            <span>Confirme sua senha</span>
+                            <input name="confirmPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Digite a senha novamente" required>
+                        </label>
+                        <button class="auth-submit" type="submit">Criar conta <span aria-hidden="true">→</span></button>
+                    </form>
+
+                    <div class="auth-divider"><span>ou cadastre-se com</span></div>
+                    <div class="auth-social" data-social-buttons>
+                        <button class="auth-social__button" type="button" data-social="google"><img src="assets/icons/google.svg" alt="" width="20" height="20">Google</button>
+                        <button class="auth-social__button" type="button" data-social="facebook"><img src="assets/icons/facebook.svg" alt="" width="20" height="20">Facebook</button>
+                        <button class="auth-social__button" type="button" data-social="x"><img src="assets/icons/x-social.svg" alt="" width="20" height="20">X</button>
+                    </div>
+                    <p class="auth-note">No modo Live Server, contas de demonstração ficam apenas neste navegador. O acesso social precisa ser configurado com cada provedor antes de entrar em produção.</p>
+                    <p class="auth-switch">Já tem uma conta? <a data-login-link href="login.html">Entrar</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

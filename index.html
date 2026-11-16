@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projeto Fênix — Jogos portados para navegador</title>
+    <meta name="description" content="Diretório de jogos para navegador: encontre, compare controles e acesse o projeto original sem baixar nada.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/home.js"></script>
+</head>
+
+<body data-page="home">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" tabindex="-1">
+        <noscript>
+            <p class="noscript">O Projeto Fênix precisa de JavaScript para montar o catálogo. Ative o JavaScript no navegador e recarregue a página.</p>
+        </noscript>
+
+        <!-- 1. HERO + faixa de miniaturas -->
+        <section class="hero" id="hero" aria-label="Jogos em destaque">
+            <div class="hero__stage" data-slot="hero-stage">
+                <div class="hero__skeleton" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- 2. Continue jogando (aparece só se houver histórico neste dispositivo) -->
+        <section class="section section--tight" id="continue" aria-labelledby="continue-title" hidden>
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Seu histórico neste dispositivo</p>
+                        <h2 class="title-hud" id="continue-title">Continue jogando</h2>
+                    </div>
+                    <button class="btn btn--ghost btn--sm" type="button" data-action="open-library">Meu histórico <span data-icon="arrow-right" data-size="16"></span></button>
+                </header>
+                <div data-slot="continue"></div>
+            </div>
+        </section>
+
+        <!-- 3. Jogos em destaque (Game Explorer) -->
+        <section class="section" id="destaques" aria-labelledby="destaques-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Seleção editorial</p>
+                        <h2 class="title-hud" id="destaques-title">Jogos em destaque</h2>
+                        <p class="section-head__desc">Projetos escolhidos pela equipe. Use as setas para percorrer a seleção.</p>
+                    </div>
+                    <div class="explorer-nav" data-slot="explorer-nav"></div>
+                </header>
+                <div class="explorer" data-slot="explorer">
+                    <div class="explorer__skeleton" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Mais populares -->
+        <section class="section section--tight" id="populares" aria-labelledby="populares-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Neste dispositivo</p>
+                        <h2 class="title-hud" id="populares-title">Mais populares</h2>
+                        <p class="local-note" data-slot="popular-note"></p>
+                    </div>
+                    <a class="btn btn--ghost btn--sm" href="tendencias.html">Ver tendências <span data-icon="arrow-right" data-size="16"></span></a>
+                </header>
+                <div data-slot="popular"></div>
+            </div>
+        </section>
+
+        <!-- 5. Adicionados recentemente -->
+        <section class="section section--tight" id="recentes" aria-labelledby="recentes-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Novidades do catálogo</p>
+                        <h2 class="title-hud" id="recentes-title">Adicionados recentemente</h2>
+                    </div>
+                    <a class="btn btn--ghost btn--sm" href="recentes.html">Ver recentes <span data-icon="arrow-right" data-size="16"></span></a>
+                </header>
+                <div data-slot="recent"></div>
+            </div>
+        </section>
+
+        <!-- 6. Explore por gênero -->
+        <section class="section" id="generos" aria-labelledby="generos-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Descoberta por categoria</p>
+                        <h2 class="title-hud" id="generos-title">Explore por gênero</h2>
+                        <p class="section-head__desc">As quantidades vêm direto do catálogo e mudam sozinhas quando novos jogos são cadastrados.</p>
+                    </div>
+                    <a class="btn btn--ghost btn--sm" href="generos.html">Todos os gêneros <span data-icon="arrow-right" data-size="16"></span></a>
+                </header>
+                <div data-slot="genres"></div>
+            </div>
+        </section>
+
+        <!-- 7. Explore por plataforma -->
+        <section class="section section--tight" id="plataformas" aria-labelledby="plataformas-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Plataforma de origem</p>
+                        <h2 class="title-hud" id="plataformas-title">Explore por plataforma</h2>
+                    </div>
+                </header>
+                <div data-slot="platforms"></div>
+            </div>
+        </section>
+
+        <!-- 8. Jogos para jogar com controle -->
+        <section class="section section--tight" id="controle" aria-labelledby="controle-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Compatibilidade confirmada</p>
+                        <h2 class="title-hud" id="controle-title">Para jogar com controle</h2>
+                        <p class="section-head__desc">Somente jogos cuja ficha ou fonte confiável confirma suporte a controle (gamepad).</p>
+                    </div>
+                </header>
+                <div data-slot="gamepad"></div>
+            </div>
+        </section>
+
+        <!-- 9. Jogos para dispositivos móveis -->
+        <section class="section section--tight" id="mobile" aria-labelledby="mobile-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Controles por toque</p>
+                        <h2 class="title-hud" id="mobile-title">Para jogar no celular</h2>
+                        <p class="section-head__desc">Jogos com toque confirmado ou compatibilidade com celular informada na ficha.</p>
+                    </div>
+                </header>
+                <div data-slot="mobile"></div>
+            </div>
+        </section>
+
+        <!-- Spotlight: jogo aleatório -->
+        <section class="section section--surface" id="spotlight" aria-labelledby="spotlight-title">
+            <div class="container-wide">
+                <div data-slot="spotlight"></div>
+            </div>
+        </section>
+
+        <!-- 10. Banner promocional -->
+        <section class="promo" id="promo" aria-labelledby="promo-title">
+            <div class="promo__shape" aria-hidden="true"></div>
+            <div class="container-wide promo__inner">
+                <div class="promo__art" aria-hidden="true">
+                    <span class="promo__ring promo__ring--a"></span>
+                    <span class="promo__ring promo__ring--b"></span>
+                    <img src="assets/images/logo/Projeto Fênix - Emblema.svg" alt="" width="220" height="220">
+                </div>
+                <div class="promo__content">
+                    <p class="promo__tag">Catálogo aberto</p>
+                    <h2 class="promo__title" id="promo-title">Encontre seu <span>próximo jogo</span></h2>
+                    <p class="promo__text">Pesquise por nome, gênero, plataforma ou controles. Sem cadastro, sem download e sem rastreadores.</p>
+                    <form class="promo__form" action="todos-os-jogos.html" method="get" role="search">
+                        <label class="sr-only" for="promo-q">Pesquisar no catálogo</label>
+                        <input class="promo__input" id="promo-q" name="q" type="search" maxlength="80"
+                            placeholder="Ex.: puzzle, xadrez, teclado…" autocomplete="off" required>
+                        <button class="promo__submit" type="submit" aria-label="Pesquisar no catálogo"><span data-icon="arrow-right" data-size="22"></span></button>
+                    </form>
+                    <p class="promo__links"><a href="todos-os-jogos.html">Ver todos os jogos</a><button class="link-btn" type="button" data-action="random-game">Surpreenda-me</button></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

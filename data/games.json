@@ -1,0 +1,435 @@
+{
+    "schemaVersion": 1,
+    "generatedAt": "2026-11-05",
+    "seed": true,
+    "note": "Catálogo inicial (semente) com 6 projetos reais, verificados em fontes públicas em 05/11/2026. O Ported2Browser bloqueia acesso automatizado (robots.txt) e NÃO foi usado como fonte. Novos jogos devem seguir docs/DATA_SCHEMA.md e docs/CATALOG_IMPORT.md.",
+    "games": [
+        {
+            "id": "g-nfsu2",
+            "slug": "nfsu2",
+            "name": "Need for Speed: Underground 2",
+            "shortDescription": "Prepare-se para dominar as ruas em corridas eletrizantes, desafiar rivais e transformar seu carro em uma verdadeira máquina de velocidade. Personalize cada detalhe, conquiste respeito e mostre quem manda na cidade!",
+            "description": "A cidade nunca dorme, e as ruas estão prontas para receber o próximo rei das corridas! Entre em um universo de velocidade, adrenalina e rivalidade, onde cada corrida é uma oportunidade de provar seu talento e construir sua reputação no cenário das corridas de rua. \n\nExplore uma cidade aberta, descubra novos desafios e enfrente pilotos cada vez mais habilidosos em disputas emocionantes. Escolha seu carro, personalize cada detalhe com peças exclusivas, modificações visuais e melhorias de desempenho para criar uma máquina que represente seu estilo. \n\nAcelere em diferentes modalidades de corrida, conquiste vitórias, desbloqueie novas possibilidades e mostre que você nasceu para dominar o asfalto. Com uma atmosfera urbana envolvente, cenários noturnos marcantes e uma experiência repleta de emoção, a jornada rumo ao topo começa com você. \n\nA cidade é seu território. As ruas são seu palco. A velocidade é sua identidade.",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/NFSU2.png"
+            },
+            "images": [],
+            "genres": [ "Corrida", "Mundo aberto"],
+            "platform": "PC",
+            "players": {
+                "single": "yes",
+                "multi": "yes"},
+            "dateAdded": "2026-10-30",
+            "dateUpdated": "2026-11-12",
+            "projectType": "port",
+            "playUrl": "https://nfsu2.xyz/",
+            "controls": {
+                "keyboard": "required",
+                "mouse": "supported",
+                "gamepad": "supported",
+                "touch": "unsupported"
+            },
+            "controlsSource": "Jogabilidade disponível para controle e teclado e mouse.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "yes"
+            },
+            "save": {
+                "status": "yes"
+            },
+            "languages": ["Multi (+ de 20 idiomas)"],
+            "tags": [ "Need for Speed", "Corrida", "EA Games", "Multiplayer" ],
+            "developer": "EA Black Box / Electronic Arts",
+            "developmentStatus": "released",
+            "releaseYear": 2004,
+            "sources": [
+                {
+                "label": "Underground 2 Revived — Need for Speed: Underground 2",
+                "url": "https://nfsu2.xyz/"
+                }
+            ],
+            "editorial": {
+                "featured": true,
+                "featuredOrder": 2,
+                "pitch": "Domine as ruas de Bayview em corridas eletrizantes, desafie rivais e transforme seu carro em uma verdadeira máquina de velocidade."
+            },
+            "linkCheck": {
+                "status": "ok",
+                "method": "Ao clicar no botão, você será redirecionado para a página do projeto Underground 2 Revived e poderá personalizar as configurações do jogo conforme os requisitos do seu sistema.",
+                "date": "2026-11-12"
+            },
+            "verifiedAt": "2026-11-12"
+        },
+        {
+            "id": "g-minecraft",
+            "slug": "minecraft",
+            "name": "Minecraft",
+            "shortDescription": "Explore mundos infinitos, construa grandes aventuras, enfrente criaturas misteriosas e transforme sua imaginação em realidade! Colete recursos, crie ferramentas, sobreviva aos desafios e construa tudo o que puder imaginar. No Minecraft, o limite é a sua criatividade!",
+            "description": "Prepare-se para viver uma aventura extraordinária em um universo onde sua imaginação não tem limites! No Minecraft, você pode explorar florestas misteriosas, montanhas gigantescas, oceanos profundos e cavernas cheias de tesouros. \n\nConstrua casas incríveis, castelos gigantes, cidades inteiras e crie seu próprio mundo do jeito que sempre imaginou! Enfrente zumbis, esqueletos, creepers e criaturas misteriosas enquanto luta para sobreviver. Use sua criatividade para criar construções impressionantes e transformar simples blocos em verdadeiras obras de arte. \n\nEncontre diamantes, minérios raros, vilarejos secretos e lugares surpreendentes. Encare grandes aventuras, enfrente chefões poderosos e descubra tudo o que esse universo tem a oferecer. \n\nCompartilhe aventuras, construa projetos incríveis e crie memórias inesquecíveis. Seja um explorador, construtor, aventureiro ou sobrevivente. Em Minecraft, você escreve sua própria história! O mundo é seu. Sua criatividade é o limite. Sua aventura começa agora!",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/Minecraft.jpg"
+            },
+            "images": [],
+            "genres": [ "Sandbox", "Sobrevivência", "Aventura"],
+            "platform": "PC",
+            "players": {
+                "single": "yes",
+                "multi": "yes"},
+            "dateAdded": "2026-10-28",
+            "dateUpdated": "2026-11-12",
+            "projectType": "port",
+            "playUrl": "https://www.lemon-web.net/applications/lemon-web-games#minecraft",
+            "controls": {
+                "keyboard": "required",
+                "mouse": "required",
+                "gamepad": "unsupported",
+                "touch": "unsupported"
+            },
+            "controlsSource": "Jogabilidade disponível apenas para teclado e mouse.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "yes"
+            },
+            "save": {
+                "status": "yes"
+            },
+            "languages": ["Multi (+ de 70 idiomas)"],
+            "tags": [ "Minecraft", "Eaglecraft", "Java Edition", "Sandbox" ],
+            "developer": "Mojang Studios",
+            "developmentStatus": "released",
+            "releaseYear": 2009,
+            "sources": [
+                {
+                "label": "Lemon Web Games — Minecraft",
+                "url": "https://www.lemon-web.net/applications/lemon-web-games#minecraft"
+                }
+            ],
+            "editorial": {
+                "featured": true,
+                "featuredOrder": 1,
+                "pitch": "Explore mundos infinitos, construa grandes aventuras, enfrente criaturas misteriosas e transforme sua imaginação em realidade!"
+            },
+            "linkCheck": {
+                "status": "ok",
+                "method": "Ao clicar no botão, você será redirecionado para a página do projeto Lemon Web Games e poderá escolher entre duas versões de jogo: Standard Edition e a versão aprimorada com Shaders.",
+                "date": "2026-11-12"
+            },
+            "verifiedAt": "2026-11-12"
+        },
+        {
+            "id": "g-doom",
+            "slug": "doom",
+            "name": "DOOM",
+            "shortDescription": "Prepare-se para enfrentar as forças do inferno em uma experiência eletrizante de ação e sobrevivência! Encare hordas de demônios, explore instalações tomadas pelo caos e utilize um arsenal devastador para sobreviver a uma verdadeira carnificina interdimensional.",
+            "description": "O inferno está mais próximo do que você imagina, e a única coisa entre a humanidade e a destruição é você! \n\n Em uma instalação militar em Marte, um experimento misterioso abre as portas para uma dimensão aterrorizante, liberando criaturas demoníacas sedentas por sangue. Cercado por monstros grotescos, corredores sombrios e ambientes infestados de perigos, você precisará lutar pela própria sobrevivência em uma batalha implacável contra as forças do inferno. \n\n Explore cenários labirínticos, descubra passagens secretas e enfrente inimigos cada vez mais ameaçadores utilizando um arsenal de respeito, que inclui espingardas, metralhadoras, lança-foguetes e armas capazes de transformar demônios em verdadeiros pedaços de destruição. \n\n Com ação frenética, atmosfera sombria, violência visceral e uma trilha sonora marcante, esta experiência revolucionou os jogos de tiro em primeira pessoa e estabeleceu um legado inesquecível na história dos videogames. \n\n Prepare suas armas, encare seus piores pesadelos e mostre ao inferno que ele escolheu o adversário errado.",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/Doom.jpg"
+            },
+            "images": [],
+            "genres": ["Ação", "FPS"],
+            "platform": "PC (DOS)",
+            "players": {
+                "single": "yes",
+                "multi": "yes"
+            },
+            "dateAdded": "2026-11-12",
+            "dateUpdated": "2026-11-12",
+            "projectType": "port",
+            "playUrl": "https://silentspacemarine.com/",
+            "officialUrl": "https://github.com/cloudflare/doom-wasm",
+            "controls": {
+                "keyboard": "required",
+                "mouse": "supported",
+                "gamepad": "unsupported",
+                "touch": "unsupported"
+            },
+            "controlsSource": "Jogabilidade disponível apenas para teclado e mouse.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "yes"
+            },
+            "save": {
+                "status": "yes"
+            },
+            "languages": ["Inglês"],
+            "tags": ["DOOM", "id Software", "FPS", "WebAssembly", "multiplayer", "Cloudflare"],
+            "developer": "id Software",
+            "developmentStatus": "released",
+            "releaseYear": 1993,
+            "license": {
+                "name": "GPL-2.0 (código do port Chocolate Doom/WebAssembly; conteúdo do jogo tem termos próprios)",
+                "url": "https://github.com/cloudflare/doom-wasm"
+            },
+            "sources": [
+                {
+                "label": "Silent Space Marine — DOOM para navegador",
+                "url": "https://silentspacemarine.com/"
+                },
+                {
+                "label": "Cloudflare — Multiplayer Doom on Cloudflare Workers",
+                "url": "https://blog.cloudflare.com/doom-multiplayer-workers/"
+                },
+                {
+                "label": "Cloudflare — repositório do port WebAssembly",
+                "url": "https://github.com/cloudflare/doom-wasm"
+                },
+                {
+                "label": "Cloudflare — site e roteador multiplayer",
+                "url": "https://github.com/cloudflare/doom"
+                }
+            ],
+            "editorial": {
+                "featured": true,
+                "featuredOrder": 3,
+                "pitch": "Encare hordas de demônios, explore instalações tomadas pelo caos e utilize um arsenal devastador para sobreviver a uma verdadeira carnificina interdimensional."
+            },
+            "knownIssues": [
+                "A Cloudflare relata que desconexões abruptas podem não ser tratadas corretamente."
+            ],
+            "linkCheck": {
+                "status": "ok",
+                "date": "2026-11-12"
+            },
+            "verifiedAt": "2026-11-12"
+        },
+        {
+            "id": "g-super-mario-64",
+            "slug": "super-mario-64",
+            "name": "Super Mario 64",
+            "shortDescription": "Explore o castelo da Peach, colete Estrelas de Poder e jogue a aventura 3D do Nintendo 64 sozinho ou com outras pessoas.",
+            "description": "Lançado para Nintendo 64 em 1996, Super Mario 64 levou Mario para uma aventura em 3D pelo Castelo da Princesa Peach e pelos mundos escondidos em suas pinturas. Explore cada cenário, encontre segredos e colete Estrelas de Poder para avançar pela aventura.\n\nEsta versão para navegador, criada por Oliver Sauter, acrescenta partidas multiplayer. O site do criador anuncia mundos compartilhados para até 50 jogadores, além de modo shooter e chat de voz.\n\nSegundo as informações fornecidas, o jogo funciona em celular, mas os controles disponíveis são gamepad, teclado e mouse; toque não é compatível.",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/SM64.jpg"
+            },
+            "images": [],
+            "genres": ["Ação", "Plataforma", "Aventura"],
+            "platform": "Nintendo 64",
+            "players": {
+                "single": "yes",
+                "multi": "yes",
+                "note": "O jogo original é individual; a versão de navegador inclui multiplayer, conforme informado pelo usuário. O site do criador anuncia mundos compartilhados para até 50 jogadores."
+            },
+            "dateAdded": "2026-11-12",
+            "dateUpdated": "2026-11-12",
+            "projectType": "port",
+            "playUrl": "https://olivers.tools/?play",
+            "officialUrl": "https://olivers.tools/",
+            "controls": {
+                "keyboard": "supported",
+                "mouse": "supported",
+                "gamepad": "supported",
+                "touch": "unsupported"
+            },
+            "controlsSource": "Conforme informado pelo usuário: aceita gamepad, teclado e mouse; controles por toque não são compatíveis.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "yes"
+            },
+            "save": {
+                "status": "ok"
+            },
+            "languages": [],
+            "languagesNote": "Os idiomas da versão de navegador não foram confirmados.",
+            "tags": ["Super Mario", "Nintendo 64", "Plataforma", "Aventura 3D", "Multiplayer"],
+            "developer": "Nintendo (jogo original); Oliver Sauter (versão para navegador)",
+            "developmentStatus": "released",
+            "developmentNote": "O jogo original foi lançado em 1996. A página do criador apresenta a versão de navegador.",
+            "releaseYear": 1996,
+            "license": {
+                "name": "Proprietária (jogo original da Nintendo; termos da versão para navegador não informados)",
+                "url": ""
+            },
+            "sources": [
+                {
+                "label": "Oliver Sauter — Super Mario 64 Multiplayer",
+                "url": "https://olivers.tools/?play"
+                },
+                {
+                "label": "Oliver Sauter — site do criador",
+                "url": "https://olivers.tools/"
+                },
+                {
+                "label": "Nintendo — história de Super Mario 64",
+                "url": "https://www.nintendo.com/jp/character/mario/history/64/index.html"
+                }
+            ],
+            "editorial": {
+                "featured": true,
+                "featuredOrder": 5
+            },
+            "knownIssues": [],
+            "linkCheck": {
+                "status": "partial",
+                "method": "O domínio respondeu, mas o conteúdo interativo do jogo não ficou legível na verificação automática; controles e compatibilidade com celular foram informados pelo usuário.",
+                "date": "2026-11-12"
+            },
+            "verifiedAt": "2026-11-12"
+        },
+        {
+            "id": "g-nfs-most-wanted",
+            "slug": "nfs-most-wanted",
+            "name": "Need for Speed: Most Wanted",
+            "shortDescription": "Volte a Rockport, desafie a Lista Negra e fuja da polícia em corridas solo ou online no navegador.",
+            "description": "Em Need for Speed: Most Wanted, corra pelas ruas de Rockport, desafie os rivais da Lista Negra e tente escapar das perseguições policiais. Personalize seus carros e conquiste seu lugar entre os pilotos mais procurados da cidade.\n\nEsta versão do Most Wanted Online leva o jogo ao navegador e acrescenta atividades multiplayer. O projeto anuncia corridas online para até 16 participantes e exploração livre com jogadores ilimitados.\n\nTambém é possível jogar a carreira individual. No celular, a versão web oferece controles por toque; gamepad e teclado também são compatíveis.",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/NFSMW.png"
+            },
+            "images": [],
+            "genres": ["Corrida", "Ação", "Mundo aberto"],
+            "platform": "PC (Windows)",
+            "players": {
+                "single": "yes",
+                "multi": "yes"
+            },
+            "dateAdded": "2026-11-13",
+            "dateUpdated": "2026-11-13",
+            "projectType": "port",
+            "playUrl": "https://web.nfsmwo.com/",
+            "officialUrl": "https://nfsmwo.com/",
+            "controls": {
+                "keyboard": "supported",
+                "mouse": "supported",
+                "gamepad": "supported",
+                "touch": "supported"
+            },
+            "controlsSource": "O guia oficial do MWO documenta controles por toque no celular, suporte a gamepad e teclado e mouse.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "yes"
+            },
+            "save": {
+                "status": "yes"
+            },
+            "languages": ["Multi (+ de 20 idiomas)"],
+            "tags": ["Need for Speed", "Corrida", "Blacklist", "Multiplayer", "Polícia"],
+            "developer": "EA Black Box / EA Canada (jogo original); equipe Most Wanted Online / PlakMP (mod e versão web)",
+            "developmentStatus": "released",
+            "developmentNote": "Jogo original lançado em 2005; o Most Wanted Online é um projeto independente.",
+            "releaseYear": 2005,
+            "license": {
+                "name": "Proprietária (jogo original da Electronic Arts; serviço MWO sujeito aos próprios Termos de Uso)",
+                "url": "https://nfsmwo.com/en-us/terms"
+            },
+            "sources": [
+                {
+                "label": "Most Wanted Online — site do projeto",
+                "url": "https://nfsmwo.com/"
+                },
+                {
+                "label": "Most Wanted Online — jogar no navegador",
+                "url": "https://web.nfsmwo.com/"
+                },
+                {
+                "label": "Most Wanted Online — atividades multiplayer",
+                "url": "https://nfsmwo.com/en-us/activities"
+                },
+                {
+                "label": "Most Wanted Online — guia para celular e controles",
+                "url": "https://nfsmwo.com/en-us/guides/how-to-play-nfs-most-wanted-on-phone"
+                },
+                {
+                "label": "Most Wanted Online — Termos de Uso",
+                "url": "https://nfsmwo.com/en-us/terms"
+                }
+            ],
+            "editorial": {
+                "featured": true,
+                "featuredOrder": 4,
+                "pitch": "Rockport está de volta: corra pela cidade, desafie rivais e fuja da polícia com outros jogadores."
+            },
+            "knownIssues": [],
+            "linkCheck": {
+                "status": "partial",
+                "method": "O site e o cliente web responderam; a tela do jogo permaneceu em carregamento durante a verificação automatizada.",
+                "date": "2026-11-13"
+            },
+            "verifiedAt": "2026-11-13"
+        },
+        {
+            "id": "g-gta5",
+            "slug": "gta5",
+            "name": "Grand Theft Auto V",
+            "shortDescription": "Explore Los Santos, alterne entre Michael, Franklin e Trevor, participe de assaltos e descubra tudo o que o enorme mundo aberto de GTA V tem a oferecer diretamente no navegador.",
+            "description": "Em Grand Theft Auto V, explore Los Santos e o condado de Blaine County em uma aventura de mundo aberto repleta de ação, crimes, perseguições policiais e atividades variadas. A história acompanha três protagonistas: Michael De Santa, Franklin Clinton e Trevor Philips, cujas vidas se cruzam em uma sequência de missões cada vez mais perigosas.\n\nAlterne entre os três personagens, participe de assaltos elaborados, dirija uma enorme variedade de veículos, personalize automóveis, enfrente gangues e explore livremente cidades, desertos, montanhas e outras regiões do mapa.\n\nEsta versão disponibilizada pela Lemon Web Games utiliza tecnologia WebAssembly (WASM) para executar GTA V diretamente no navegador, sem depender do hardware original dos consoles. A experiência é voltada ao modo de um jogador e permite aproveitar a campanha e a exploração do mundo aberto.",
+            "cover": {
+                "type": "image",
+                "src": "assets/images/games/GTA5.png"
+            },
+            "images": [],
+            "genres": ["Ação", "Aventura", "Mundo aberto", "RPG"],
+            "platform": "PC",
+            "players": {
+                "single": "yes",
+                "multi": "no"
+            },
+            "dateAdded": "2026-10-17",
+            "dateUpdated": "2026-11-14",
+            "projectType": "port",
+            "playUrl": "https://www.lemon-web.net/applications/lemon-web-games#grandtheftauto5",
+            "officialUrl": "https://www.rockstargames.com/gta-v",
+            "controls": {
+                "keyboard": "required",
+                "mouse": "required",
+                "gamepad": "unsupported",
+                "touch": "unsupported"
+            },
+            "controlsSource": "A versão está catalogada como jogo WASM pela Lemon Web Games. Os requisitos específicos de teclado, mouse, gamepad e controles por toque não estão documentados individualmente; recomenda-se utilizar teclado e mouse em um computador.",
+            "devices": {
+                "desktop": "yes",
+                "mobile": "no"
+            },
+            "save": {
+                "status": "ok"
+            },
+            "languages": [
+                "Inglês"
+            ],
+            "tags": ["Grand Theft Auto", "GTA", "Rockstar Games", "Los Santos", "Mundo Aberto", "Assalto", "Tiro", "Ação", "Polícia"],
+            "developer": "Rockstar North / Rockstar Games",
+            "developmentStatus": "released",
+            "releaseYear": 2013,
+            "license": {
+                "name": "Proprietária (jogo original desenvolvido pela Rockstar North e publicado pela Rockstar Games; versão web independente, sem licença oficial confirmada)",
+                "url": "https://www.rockstargames.com/legal"
+            },
+            "sources": [
+                {
+                    "label": "Lemon Web Games — catálogo de jogos",
+                    "url": "https://www.lemon-web.net/applications/lemon-web-games"
+                },
+                {
+                    "label": "Lemon Web Solutions — artigo sobre Grand Theft Auto V",
+                    "url": "https://www.lemon-web.net/lemon-blog/games/grand-theft-auto-v-crime-chaos-heists-and-freedom-across-los-santos"
+                },
+                {
+                    "label": "Lemon Web Solutions — histórico de desenvolvimento",
+                    "url": "https://www.lemon-web.net/applications/development-diary"
+                },
+                {
+                    "label": "Rockstar Games — Grand Theft Auto V",
+                    "url": "https://www.rockstargames.com/gta-v"
+                },
+                {
+                    "label": "Rockstar Games — informações legais",
+                    "url": "https://www.rockstargames.com/legal"
+                }
+            ],
+            "editorial": {
+                "featured": false,
+                "featuredOrder": null
+            },
+            "knownIssues": [],
+            "linkCheck": {
+                "status": "partial",
+                "method": "O catálogo e o artigo oficial da Lemon Web confirmam a disponibilização de GTA V como jogo WASM. A execução completa, o desempenho e a persistência dos saves não foram verificados nesta checagem.",
+                "date": "2026-11-14"
+            },
+            "verifiedAt": "2026-11-14"
+        }
+    ]
+}

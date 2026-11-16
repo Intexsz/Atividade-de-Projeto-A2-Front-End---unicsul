@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corrida Fênix — Projeto Fênix</title>
+    <meta name="description" content="Corra, salte os obstáculos e tente bater seu recorde no jogo de dinossauro do Projeto Fênix.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/dino.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/dino.js"></script>
+</head>
+<body data-page="dino">
+    <a class="skip-link" href="#main">Pular para o jogo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" class="dino-main" tabindex="-1">
+        <section class="dino-stage" aria-labelledby="dino-title">
+            <div class="dino-game-shell" id="dino-game-shell">
+                <div class="dino-toolbar">
+                    <div class="dino-heading">
+                        <p class="dino-eyebrow">CORRIDA INFINITA</p>
+                        <h1 id="dino-title">Corrida Fênix</h1>
+                    </div>
+                    <p class="dino-controls-hint">ESPAÇO / ↑ PULAR <span>·</span> ↓ ABAIXAR <span>·</span> ENTER REINICIAR</p>
+                    <div class="dino-hud" aria-label="Recorde">
+                        <span>RECORDE <strong data-best>00000</strong></span>
+                    </div>
+                    <button class="dino-fullscreen" type="button" data-fullscreen aria-label="Abrir jogo em tela cheia"><span class="dino-fullscreen__icon" aria-hidden="true">⛶</span><span class="dino-fullscreen__label" data-fullscreen-label>Fullscreen</span></button>
+                </div>
+
+                <div class="dino-arena" data-arena>
+                    <canvas id="dino-canvas" tabindex="0" role="img" aria-label="Jogo de corrida: Espaço ou seta para cima pula, seta para baixo abaixa e Enter reinicia após uma colisão."></canvas>
+                    <div class="dino-score" aria-label="Pontuação atual">
+                        <span class="dino-score__label">PONTOS</span>
+                        <strong data-score>00000</strong>
+                    </div>
+                    <div class="dino-touch-controls">
+                        <button class="dino-jump" type="button" data-jump aria-label="Pular"><span aria-hidden="true">↑</span><span>PULAR</span></button>
+                    </div>
+                    <p class="dino-live sr-only" data-live role="status" aria-live="polite">Pronto para começar. Pressione Espaço para correr.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

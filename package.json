@@ -1,0 +1,11 @@
+{
+    "name": "projeto-fenix",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "description": "Projeto Fênix — portal de descoberta de jogos para navegador (HTML, CSS e JavaScript puros). Sem dependências.",
+    "scripts": {
+        "start": "node tools/serve.mjs",
+        "check": "node tools/check.mjs"
+    }
+}

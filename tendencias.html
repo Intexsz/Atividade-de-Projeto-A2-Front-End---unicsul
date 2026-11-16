@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tendências — Projeto Fênix</title>
+    <meta name="description" content="Os jogos que mais despertam interesse neste dispositivo, com o ranking local identificado como tal.">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="icon" href="assets/icons/Projeto Fênix - Emblema.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/tendencias.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/pages/tendencias.js"></script>
+</head>
+
+<body data-page="tendencias">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true" hidden></canvas>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main" tabindex="-1">
+        <noscript>
+            <p class="noscript">O Projeto Fênix precisa de JavaScript para montar o catálogo. Ative o JavaScript no navegador e recarregue a página.</p>
+        </noscript>
+
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container-wide page-hero__inner">
+                <nav aria-label="Trilha de navegação">
+                    <ol class="crumbs">
+                        <li><a href="index.html">Início</a></li>
+                        <li aria-current="page">Tendências</li>
+                    </ol>
+                </nav>
+                <h1 class="page-hero__title" id="page-title">Tendências</h1>
+                <p class="page-hero__desc">Os jogos que mais despertam interesse. A classificação usa somente os acessos registrados neste dispositivo — nunca estatísticas globais inventadas.</p>
+                <div class="local-summary" data-slot="summary" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- Ranking principal: filtros, busca e ordenação atuam sobre ele -->
+        <section class="section section--tight" aria-labelledby="ranking-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <h2 class="title-hud" id="ranking-title" tabindex="-1">Ranking</h2>
+                        <p class="section-head__desc" data-slot="basis"></p>
+                    </div>
+                </header>
+
+                <div class="trend-toolbar" data-slot="toolbar"></div>
+
+                <div class="trend-results" data-slot="ranking"></div>
+            </div>
+        </section>
+
+        <!-- Crescimento de acessos (somente com dados reais deste dispositivo) -->
+        <section class="section section--black" aria-labelledby="rising-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Comparativo local</p>
+                        <h2 class="title-hud" id="rising-title">Em alta nos últimos 7 dias</h2>
+                        <p class="section-head__desc">Jogos com mais acessos nos últimos 7 dias do que nos 7 dias anteriores, contados neste navegador. Nada aqui é estimado.</p>
+                    </div>
+                </header>
+                <div data-slot="rising"></div>
+            </div>
+        </section>
+
+        <!-- Seleção editorial -->
+        <section class="section" aria-labelledby="featured-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Escolha da equipe</p>
+                        <h2 class="title-hud" id="featured-title">Em destaque</h2>
+                        <p class="section-head__desc">Seleção editorial do Projeto Fênix — não depende de acessos e vale para todos os visitantes.</p>
+                    </div>
+                </header>
+                <div data-slot="featured"></div>
+            </div>
+        </section>
+
+        <!-- Classificação por gênero e por plataforma -->
+        <section class="section section--surface" aria-labelledby="class-title">
+            <div class="container-wide">
+                <header class="section-head">
+                    <div class="section-head__text">
+                        <p class="eyebrow">Visão geral</p>
+                        <h2 class="title-hud" id="class-title">Classificação por grupo</h2>
+                        <p class="section-head__desc">Quantos jogos existem em cada grupo e quais lideram neste dispositivo. Escolha um grupo para filtrar o ranking.</p>
+                    </div>
+                </header>
+                <div class="tabs class-tabs" role="tablist" aria-label="Agrupar por" data-slot="class-tabs">
+                    <button class="tabs__tab" type="button" role="tab" id="tab-genre" aria-controls="class-panel"
+                        aria-selected="true" data-tab="genre">Por gênero</button>
+                    <button class="tabs__tab" type="button" role="tab" id="tab-platform" aria-controls="class-panel"
+                        aria-selected="false" tabindex="-1" data-tab="platform">Por plataforma</button>
+                </div>
+                <div class="class-panel" id="class-panel" role="tabpanel" aria-labelledby="tab-genre"
+                    data-slot="class-panel"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,495 @@
+/* Tendências — composição de ranking (Etapa 2).
+   Pódio Top 3 com luz por medalha, linhas numeradas, indicador proporcional ao dado local real,
+   resumo local, "em alta", classificação por grupo. Sem rem: tudo em px/%/fr/clamp. */
+
+/* ---------- Resumo local ---------- */
+.local-summary {
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.local-summary__note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-3);
+}
+
+.local-summary__note .icon {
+    color: var(--accent);
+}
+
+/* ---------- Barra de ferramentas (a barra em si é compartilhada: .filterbar em components.css) ---------- */
+.trend-toolbar {
+    margin-top: 24px;
+}
+
+.trend-results {
+    margin-top: 32px;
+}
+
+/* ---------- Indicador de popularidade ---------- */
+.meter {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.meter__track {
+    height: 8px;
+    border-radius: var(--pill);
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.meter__fill {
+    display: block;
+    width: var(--w, 0%);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--accent), var(--neon));
+    box-shadow: 0 0 12px rgba(242, 5, 25, 0.55);
+    transform-origin: left center;
+    animation: meter-in 0.9s var(--ease) both;
+}
+
+.meter__text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--text-2);
+}
+
+.meter__text strong {
+    font-size: 15px;
+    color: #fff;
+}
+
+.meter__heart {
+    color: var(--pink);
+}
+
+@keyframes meter-in {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ---------- Pódio Top 3 ---------- */
+.podium {
+    margin-top: 36px;
+}
+
+.podium__list {
+    display: grid;
+    gap: 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.podium__slot {
+    --medal: #ffc83d;
+    --medal-glow: rgba(255, 200, 61, 0.38);
+    container: slot / inline-size;
+    min-width: 0;
+}
+
+.podium__slot--2 {
+    --medal: #f2cfcf;
+    --medal-glow: rgba(242, 207, 207, 0.3);
+}
+
+.podium__slot--3 {
+    --medal: #e8935a;
+    --medal-glow: rgba(232, 147, 90, 0.32);
+}
+
+.podium__slot.tier-1 {
+    --medal: #ffc83d;
+    --medal-glow: rgba(255, 200, 61, 0.38);
+}
+
+.podium__slot.tier-2 {
+    --medal: #f2cfcf;
+    --medal-glow: rgba(242, 207, 207, 0.3);
+}
+
+.podium__slot.tier-3 {
+    --medal: #e8935a;
+    --medal-glow: rgba(232, 147, 90, 0.32);
+}
+
+/* Luz da medalha em volta do card (anel + brilho difuso) */
+.podium__slot .card {
+    box-shadow: 0 0 0 2px var(--medal), 0 0 44px var(--medal-glow), var(--shadow-card);
+}
+
+.podium__plinth {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 14px 18px;
+    border-radius: var(--r-md);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--medal);
+    background: linear-gradient(180deg, rgba(64, 23, 23, 0.95), rgba(47, 17, 17, 0.95));
+    box-shadow: 0 18px 40px -22px var(--medal-glow);
+}
+
+.podium__slot--1 .podium__plinth {
+    min-height: 116px;
+}
+
+.podium__slot--2 .podium__plinth {
+    min-height: 98px;
+}
+
+.podium__slot--3 .podium__plinth {
+    min-height: 86px;
+}
+
+.podium__num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 0.9;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--medal);
+    text-shadow: 0 0 24px var(--medal-glow);
+}
+
+.podium__slot--1 .podium__num {
+    font-size: 80px;
+}
+
+.podium__info {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+}
+
+.podium__place {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--medal);
+}
+
+.podium .meter__fill {
+    background: linear-gradient(90deg, var(--medal), rgba(255, 255, 255, 0.85));
+    box-shadow: 0 0 12px var(--medal-glow);
+}
+
+/* Em slots estreitos, o numeral passa para cima do indicador */
+@container slot (max-width: 270px) {
+    .podium__plinth {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .podium__num {
+        font-size: 46px;
+    }
+
+    .podium__slot--1 .podium__num {
+        font-size: 56px;
+    }
+}
+
+@media (min-width: 760px) {
+    .podium__list {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr) minmax(0, 1fr);
+        grid-template-areas: 'two one three';
+        align-items: end;
+    }
+
+    .podium__slot--1 {
+        grid-area: one;
+    }
+
+    .podium__slot--2 {
+        grid-area: two;
+    }
+
+    .podium__slot--3 {
+        grid-area: three;
+    }
+
+    /* Menos de 3 jogos: o pódio se reorganiza em vez de deixar colunas vazias */
+    .podium--n1 .podium__list {
+        grid-template-columns: minmax(0, 360px);
+        grid-template-areas: 'one';
+        justify-content: center;
+    }
+
+    .podium--n2 .podium__list {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+        grid-template-areas: 'two one';
+        max-width: 760px;
+        margin-inline: auto;
+    }
+}
+
+/* Celular: o pódio vira uma fileira rolável (3 cards empilhados seriam longos demais) */
+@media (max-width: 759px) {
+    .podium__list {
+        display: flex;
+        gap: 16px;
+        margin-inline: calc(var(--gutter) * -1);
+        padding: 6px var(--gutter) 14px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .podium__list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .podium__slot {
+        flex: 0 0 min(76%, 300px);
+        scroll-snap-align: center;
+    }
+}
+
+/* ---------- Pódio vazio (sem acessos) ---------- */
+.podium__ghost {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 6px;
+    min-height: 190px;
+    padding: 24px;
+    border-radius: var(--r-md);
+    border: 2px dashed var(--medal);
+    background: rgba(47, 17, 17, 0.5);
+    text-align: center;
+}
+
+.podium__slot--1 .podium__ghost {
+    min-height: 250px;
+}
+
+.podium__ghost-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--medal);
+    opacity: 0.8;
+}
+
+.podium__ghost-text {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+.trend-empty {
+    margin-top: 28px;
+}
+
+/* ---------- Blocos e linhas do ranking ---------- */
+.trend-block {
+    margin-top: 48px;
+}
+
+.trend-block__head {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.trend-block__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.trend-block__title::first-letter {
+    color: var(--accent);
+}
+
+.trend-block__text {
+    max-width: 640px;
+    font-size: 14px;
+    color: var(--text-2);
+}
+
+.rank-list {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.rank-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1.4fr) minmax(200px, 1fr);
+    align-items: center;
+    gap: 16px;
+}
+
+.rank-row__num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent);
+}
+
+@media (max-width: 760px) {
+    .rank-row {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 10px 12px;
+    }
+
+    .rank-row .meter {
+        grid-column: 2;
+    }
+
+    .rank-row__num {
+        font-size: 30px;
+    }
+}
+
+/* ---------- Em alta ---------- */
+.rising-item {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+}
+
+.rising-item__delta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-2);
+}
+
+.rising-item__delta .icon {
+    color: var(--green);
+}
+
+.rising-item__delta strong {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--green);
+}
+
+.rising-item__detail {
+    font-size: 12px;
+    color: var(--text-3);
+}
+
+/* ---------- Classificação por grupo ---------- */
+.class-tabs {
+    max-width: 420px;
+    margin-bottom: 24px;
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 20px;
+}
+
+.class-card {
+    display: grid;
+    align-content: start;
+    gap: 14px;
+    padding: 20px;
+    border-radius: var(--r-md);
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.class-card__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.6px;
+}
+
+.class-card__stats {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--text-2);
+}
+
+.class-card__stats strong {
+    color: #fff;
+}
+
+.class-card__list {
+    display: grid;
+    gap: 4px;
+    padding: 0;
+    list-style: none;
+}
+
+.class-card__game {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 6px;
+    border-radius: var(--r-sm);
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.class-card__game:hover {
+    background: rgba(255, 53, 53, 0.1);
+}
+
+.class-card__thumb {
+    width: 72px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.class-card__name {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.class-card__meta {
+    font-size: 12px;
+    color: var(--text-3);
+}
+
+.class-card__apply {
+    justify-self: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .meter__fill {
+        animation: none;
+    }
+}
